@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webchat</title>
+    <style>
+        /* Styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to case management test</h1>    
+
+    <!-- Botpress Webchat Script -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    
+    <!-- Custom Configuration for the Bot -->
+    <script src="https://files.bpcontent.cloud/2024/10/14/12/20241014121603-RS1VTOGJ.js"></script>"></script>
+
+    <script>
+        // Initialize Botpress when the script is loaded
+        function initializeBotpress() {
+            console.log("Checking for Botpress WebChat...");
+
+            if (window.botpressWebChat && window.botpressWebChat.init) {
+                console.log("Botpress WebChat found. Initializing...");
+
+                window.botpressWebChat.init({
+                    hostUrl: "https://app.botpress.cloud",  // Botpress Cloud URL
+                    botId: "4c3356fe-ec5c-4acc-a83e-375848581993",  // Replace with your actual Bot ID
+                    messagingUrl: "https://cdn.botpress.cloud/webchat/v2",
+                    // botName: "My Bot",  // Customize your bot's name
+                    // botAvatarUrl: "https://example.com/path/to/avatar.png", // Optional: Bot avatar URL
+                    // backgroundColor: "#ffffff" // Optional: Background color for the webchat
+                });
+
+                // Automatically open the chat widget after initialization
+                window.botpressWebChat.sendEvent({
+                    type: 'show'
+                });
+            } else {
+                console.error("Botpress WebChat is not loaded.");
+            }
+        }
+
+        // Check every 500ms if Botpress WebChat is available, then initialize
+        const scriptCheckInterval = setInterval(() => {
+            if (window.botpressWebChat && typeof window.botpressWebChat.init === "function") {
+                initializeBotpress();
+                clearInterval(scriptCheckInterval); // Stop checking once initialized
+            }
+        }, 500);
+    </script>
+</body>
+</html>
