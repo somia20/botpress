@@ -46,7 +46,7 @@ async def rag(query: str, contexts: list) -> str:
     contexts. If you cannot find the answer to the question, say "I don't know".
     There are sentences saying refer the following screen, please don't say any reference to images or screen.
     Avoid "Refer to the following screen" text in the message.
-    If the responses can be explained in details then explain it.
+    If the response can be explained in details then explain it.
     Contexts:
     {context_str}
     Query: {query}
