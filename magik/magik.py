@@ -41,7 +41,7 @@ print(f"Number of documents in vectorstore: {vectorstore._collection.count()}")
 async def rag(query: str, contexts: list) -> str:
     print("> RAG Called")
     context_str = "\n".join(contexts)
-    prompt = f"""You are a helpfu assistant, below is a query from a user and
+    prompt = f"""You are a helpful assistant, below is a query from a user and
     some relevant contexts. Answer the question given the information in those
     contexts. If you cannot find the answer to the question, say "I don't know".
     There are sentences saying refer the following screen, please don't say any reference to images or screen.
