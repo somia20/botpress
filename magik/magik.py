@@ -31,7 +31,7 @@ if os.path.exists("embeddings") and os.listdir("embeddings"):
     vectorstore = Chroma(persist_directory="embeddings", embedding_function=embedding_function)
 else:
     # If the folder is empty or does not exist, create a new vectorstore
-    pdf_path = "6D_Magik_User Manual.pd"  # Make sure this PDF file exists in your directory
+    pdf_path = "6D_Magik_User Manual.pdf"  # Make sure this PDF file exists in your directory
     texts = load_and_process_pdf(pdf_path)
     vectorstore = Chroma.from_documents(documents=texts, embedding=embedding_function, persist_directory="embeddings")
     vectorstore.persist()
