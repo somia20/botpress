@@ -9,7 +9,7 @@ from groq import Groq
 app = Flask(__name__)
 
 # Groq setup
-GROQ_API_KEY = "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"
+GROQ_API_KEY = ""
 groq_client = Groq(api_key=GROQ_API_KEY)
 
 # Initialize SentenceTransformer embeddings
