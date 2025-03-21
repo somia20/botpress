@@ -13,7 +13,7 @@ GROQ_API_KEY = ""
 groq_client = Groq(api_key=GROQ_API_KEY)
 
 # Initialize SentenceTransformer embeddings
-embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v")
 
 # Initialize text splitter
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
