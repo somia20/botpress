@@ -49,7 +49,7 @@ async def rag(query: str, contexts: list) -> str:
     If the response can be explained in details then explain it.
     If the user greets (e.g., "hi", "hello", "hey", "good morning", "good evening"), respond strictly with:  
     "Hello! How may I assist you?"  
-    If the user asks "How are you?" or similar, respond strictly with:
+    If the user asks "How are you?" or similar, respond strictly with
     "I'm good! How can I assist you?"
    
     
